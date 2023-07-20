@@ -21,10 +21,20 @@ const Wrapper = styled.div`
 `;
 
 const RegForm = styled.div`
-  display: block;
-  width: 100%;
+ display: flex;
+ padding: 0 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  max-width: 500px; 
+  margin: 0 auto; 
   position: absolute;
-  margin: 40% auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  
   form {
     button{
       margin: 0 auto;

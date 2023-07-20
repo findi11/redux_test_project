@@ -9,8 +9,8 @@ import { initialState } from "./state";
 
 // The initial state of the SignUp Page container
 
-const signUpSlice = createSlice({
-  name: "signUp",
+const loginSlice = createSlice({
+  name: "login",
   initialState,
   reducers: {
     fetchTrigger(state, action: PayloadAction<ActionTriggerProps>) {
@@ -31,4 +31,4 @@ const signUpSlice = createSlice({
   },
 });
 
-export const { actions, reducer, name: sliceKey } = signUpSlice;
+export const { actions, reducer, name: sliceKey } = loginSlice;
