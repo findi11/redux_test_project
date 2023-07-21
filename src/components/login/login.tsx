@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { RegForm } from "../../utils/style";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { actions as loginActions } from "../../store/modules/login/slice";
+import { ActionTriggerProps } from "../../store/modules/login/types";
 
- 
 function Login() {
-    const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const onLogin = (payload: ActionTriggerProps) =>
+    dispatch(loginActions.fetchTrigger(payload));
   const [loginData, setLoginData] = useState({
-    login: "",
+    email: "",
     password: "",
   });
 
@@ -20,19 +24,11 @@ function Login() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    const storedLogin = localStorage.getItem("Login");
-    const storedPassword = localStorage.getItem("Password");
-    if (
-      storedLogin === JSON.stringify(loginData.login) &&
-      storedPassword === JSON.stringify(loginData.password)
-    ) {
-      console.log("Login successful!");
-      localStorage.setItem("Is login", 'login');
-      navigate("/");
-    } else {
-      console.log("Login failed!");
-    }
+    console.log("submit");
+    onLogin({
+      email: loginData.email,
+      password: loginData.password,
+    });
   };
 
   return (
@@ -41,7 +37,7 @@ function Login() {
         <label htmlFor="login_input">Введіть логін користувача</label>
         <input
           type="text"
-          name="login"
+          name="email"
           onChange={handleChange}
           className="login_input"
           placeholder="Enter your login"

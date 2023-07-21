@@ -3,6 +3,7 @@ import { reducer as evel } from "./modules/evel/slice";
 import {reducer as jsonPlaceholder} from './modules/jsonPlaceholder/slice';
 import {reducer as signUp} from './modules/singUp/slice';
 import {reducer as login } from './modules/login/slice';
+import { reducer as app} from './modules/app/slice'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -12,4 +13,5 @@ export default {
   jsonPlaceholder,
   signUp,
   login,
+  app,
 };

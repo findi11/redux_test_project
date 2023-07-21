@@ -1,6 +1,6 @@
 export default interface Ilogin {
     data: {
-      ipsum: Parameter;
+      info: Parameter;
     };
   }
   interface Parameter {

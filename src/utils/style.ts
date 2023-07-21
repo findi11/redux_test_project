@@ -21,22 +21,21 @@ const Wrapper = styled.div`
 `;
 
 const RegForm = styled.div`
- display: flex;
- padding: 0 20px;
+  display: flex;
+  padding: 0 20px;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
-  max-width: 500px; 
-  margin: 0 auto; 
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  
-  
+
   form {
-    button{
+    button {
       margin: 0 auto;
       padding: 10px;
       font-size: 17px;
@@ -55,7 +54,7 @@ const RegForm = styled.div`
     height: auto;
     border: 1px solid black;
     padding: 20px;
-    label{
+    label {
       font-size: 17px;
       font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -76,6 +75,7 @@ const RegForm = styled.div`
   }
 `;
 const HeaderContainer = styled.div`
+  z-index: 5;
   display: flex;
   position: fixed;
   justify-content: space-around;

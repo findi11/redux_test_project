@@ -6,8 +6,7 @@ const ApiConfig = {
   // EVEl: `https://evilinsult.com/generate_insult.php?lang=en`,
   JSON: `https://jsonplaceholder.typicode.com/posts?_limit=10_`,
   SINGUP: `https://api-app-strimm.nwdev.net/api/v1/services/mobile/auth/register`,
-  LOGIN : `https://api-app-strimm.nwdev.net/api/v1/services/mobile/auth/login`,
-
+  LOGIN: `https://api-app-strimm.nwdev.net/api/v1/services/mobile/auth/login`,
 };
 
 export default ApiConfig;

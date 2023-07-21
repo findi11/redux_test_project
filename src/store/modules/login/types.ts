@@ -11,7 +11,6 @@ export interface LoginState {
 export interface ActionTriggerProps {
   email: string;
   password: string;
-  remember?: boolean;
 }
 
 export type ContainerState = LoginState;

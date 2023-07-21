@@ -20,6 +20,7 @@ const loginSlice = createSlice({
     },
     fetchSuccess(state) {
       state.fetch.done = true;
+      console.log('done')
     },
     fetchFailed(state, action: PayloadAction<string>) {
       state.fetch.error = action.payload;
