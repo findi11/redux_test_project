@@ -21,6 +21,7 @@ const loginSlice = createSlice({
     fetchSuccess(state) {
       state.fetch.done = true;
       console.log('done')
+      localStorage.setItem('is login','login');
     },
     fetchFailed(state, action: PayloadAction<string>) {
       state.fetch.error = action.payload;

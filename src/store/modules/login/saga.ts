@@ -12,7 +12,7 @@ export function* fetchLoginSaga({
 }: ReturnType<typeof loginActions.fetchTrigger>) {
   try {
     console.log('1')
-    const { accessToken } = yield call(loginService, payload);
+    const { data } = yield call(loginService, payload);
 
     // yield localStorage.setItem('remember_token', rememberToken);
 
@@ -22,8 +22,8 @@ export function* fetchLoginSaga({
     console.log('success');
     console.log('====================================');
 
-    yield put(appActions.autoLoginSetToken({ token: accessToken }));
-    yield call(setAuthAccessToken, accessToken);
+    yield put(appActions.autoLoginSetToken({ token: data.accessToken }));
+    yield call(setAuthAccessToken, data.accessToken);
 
   } catch (err: any) {
     console.log(err);
@@ -34,9 +34,3 @@ export function* fetchLoginSaga({
   }
 }
 
-/**
- * Root saga manages watcher lifecycle
- */
-export function* loginSaga() {
-  yield takeLatest(loginActions.fetchTrigger.type, fetchLoginSaga);
-}

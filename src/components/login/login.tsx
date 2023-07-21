@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { RegForm } from "../../utils/style";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { actions as loginActions } from "../../store/modules/login/slice";
 import { ActionTriggerProps } from "../../store/modules/login/types";
 
 function Login() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const onLogin = (payload: ActionTriggerProps) =>
     dispatch(loginActions.fetchTrigger(payload));
@@ -29,6 +30,7 @@ function Login() {
       email: loginData.email,
       password: loginData.password,
     });
+    navigate ('/');
   };
 
   return (

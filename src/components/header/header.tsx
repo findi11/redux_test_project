@@ -4,26 +4,22 @@ import { useState, useEffect } from "react";
 
 function Header() {
   // const location = useLocation();
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("Is login") !== null);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("Is login") !== null
+  );
 
   useEffect(() => {
     setIsLoggedIn(localStorage.getItem("Is login") !== null);
   }, []);
 
-  function logout() {
-    localStorage.removeItem("Is login");
-    setIsLoggedIn(false);
-
-  }
-
   return (
     <HeaderContainer>
       <nav>
         <Link to="/">HOME</Link>
-        {localStorage.getItem("Login") ? (
-          isLoggedIn ? (
-            <a onClick={logout}>LOGOUT</a>
-          ) : (
+        {localStorage.getItem("access_token") ? (
+          localStorage.getItem('is login') ? (
+            <Link to="/logout">LOGOUT</Link>
+          ): (
             <Link to="/login">LOGIN</Link>
           )
         ) : (

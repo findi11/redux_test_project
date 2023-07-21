@@ -9,8 +9,8 @@ import { actions as appActions} from './modules/app/slice'
 
 import { fetchEvelSaga } from "./modules/evel/saga";
 import { fetchJsonSaga } from "./modules/jsonPlaceholder/saga";
-import { signUpSaga } from "./modules/singUp/saga";
-import { loginSaga } from "./modules/login/saga";
+import { fetchSignUpSaga } from "./modules/singUp/saga";
+import { fetchLoginSaga } from "./modules/login/saga";
 import { autoLoginSaga } from "./modules/app/saga";
 
 export function* watchSagas() {
@@ -28,11 +28,11 @@ export function* watchSagas() {
       )
       yield takeLatest(
         signUpActions.fetchTrigger.type,
-        signUpSaga
+        fetchSignUpSaga
       )
       yield takeLatest(
         loginActions.fetchTrigger.type,
-        loginSaga
+        fetchLoginSaga
       )
       yield takeLatest(
         appActions.autoLoginTrigger.type,

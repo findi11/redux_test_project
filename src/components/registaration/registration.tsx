@@ -38,7 +38,7 @@ function Registration() {
       password: inputs.password,
       email: inputs.email,
     });
-    // signUp();
+    navigate('/');
   };
 
   return (
