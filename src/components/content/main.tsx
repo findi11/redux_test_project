@@ -17,6 +17,8 @@ import {
   selectJsonDone,
 } from "../../store/modules/jsonPlaceholder/selector";
 import { JsonPlaceholderStateData } from "../../store/modules/jsonPlaceholder/types";
+import { MeStateData } from "../../store/modules/me/types";
+import { selectMeDone, selectMeData } from "../../store/modules/me/selector";
 
 function Main (){
     const [items, setItems] = useState([]);
@@ -29,6 +31,8 @@ function Main (){
     const jsonDataCount = useSelector(selectJsonDataCount);
     const jsonPlaceholder = useSelector(selectJsonData);
     const jsonDone = useSelector(selectJsonDone);
+    // const meInfoDone = useSelector(selectMeDone);
+    // console.log(selectMeData);
   
     useEffect(() => {
       jsonDone && dispatch(jsonActions.setJsonDataCount(jsonDataCount + 10));
@@ -73,6 +77,8 @@ function Main (){
       }
     }
   
+
+
     return (
       <div className="App">
         <Container>
@@ -103,6 +109,8 @@ function Main (){
             ) : (
               <></>
             )}
+
+          
           </Wrapper>
         </Container>
       </div>

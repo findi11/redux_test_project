@@ -101,4 +101,14 @@ const Container = styled.div`
   padding: 30px;
 `;
 
-export { SpinnerContainer, Container, Wrapper, RegForm, HeaderContainer };
+const Profile_card = styled.div`
+  width: calc(100% - 100px);
+  margin-top: 30px;
+  padding: 50px;
+  border: 1px solid black;
+  font-size: 20px;
+  text-align: center;
+  font-size: 25px;
+`;
+
+export { SpinnerContainer, Container, Wrapper, RegForm, HeaderContainer,Profile_card };
