@@ -5,6 +5,7 @@ import { SignUpState } from "../../store/modules/singUp/types";
 import { LoginState } from "../../store/modules/login/types";
 import { AppState } from "../../store/modules/app/types";
 import { MeState } from "../../store/modules/me/types";
+import { LogoutState } from "../../store/modules/logout/types";
 
 
 export interface RootState {
@@ -15,4 +16,5 @@ export interface RootState {
     singUp: SignUpState;
     login: LoginState;
     me: MeState; 
+    logout: LogoutState;
 }
