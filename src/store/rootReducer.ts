@@ -6,6 +6,7 @@ import {reducer as login } from './modules/login/slice';
 import { reducer as app} from './modules/app/slice'
 import { reducer as me} from './modules/me/slice'
 import {reducer as logout} from './modules/logout/slice'
+import {reducer as changePass} from './modules/change_password/slice'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -18,4 +19,5 @@ export default {
   app,
   me,
   logout,
+  changePass,
 };

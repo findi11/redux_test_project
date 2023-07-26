@@ -9,6 +9,7 @@ const ApiConfig = {
   LOGIN: `https://api-app-strimm.nwdev.net/api/v1/services/mobile/auth/login`,
   ME: `https://api-app-strimm.nwdev.net/api/v1/services/mobile/auth/me`,
   LOGOUT: `https://api-app-strimm.nwdev.net/api/v1/services/mobile/auth/logout`,
+  changePassword: `https://api-app-strimm.nwdev.net/api/v1/services/mobile/auth/password/change`,
 };
 
 export default ApiConfig;

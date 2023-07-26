@@ -6,6 +6,7 @@ import { LoginState } from "../../store/modules/login/types";
 import { AppState } from "../../store/modules/app/types";
 import { MeState } from "../../store/modules/me/types";
 import { LogoutState } from "../../store/modules/logout/types";
+import { changePass } from "../../store/modules/change_password/types";
 
 
 export interface RootState {
@@ -17,4 +18,5 @@ export interface RootState {
     login: LoginState;
     me: MeState; 
     logout: LogoutState;
+    changePass :changePass;
 }
