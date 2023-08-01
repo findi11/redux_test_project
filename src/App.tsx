@@ -13,6 +13,8 @@ import withErrorHandler from "./hoc/withErrorHandler";
 import { selectIsAuthenticated } from "./store/modules/app/selector";
 import { useEffect } from "react";
 import Profile from "./components/content/profile";
+import Page404 from "./components/specialPage/404";
+import Favourite from "./components/content/favourite";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +34,8 @@ function App() {
         <Route path="/reg" element={<Registration />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/favourite" element={<Favourite />}/>
+        <Route path = '*'  element = {<Page404/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -4,6 +4,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { actions as loginActions } from "../../store/modules/login/slice";
 import { ActionTriggerProps } from "../../store/modules/login/types";
+import { showSuccesSwal } from "../popup/succes_popup";
 
 function Login() {
   const navigate = useNavigate();
@@ -30,7 +31,10 @@ function Login() {
       email: loginData.email,
       password: loginData.password,
     });
-    navigate ('/');
+    showSuccesSwal({
+    }).then(() => {
+      navigate("/");
+    });
   };
 
   return (

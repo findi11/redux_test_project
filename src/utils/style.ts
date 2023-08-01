@@ -74,6 +74,20 @@ const RegForm = styled.div`
     }
   }
 `;
+const Page404Form = styled.div`
+  display: flex;
+  padding: 0 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
 const HeaderContainer = styled.div`
   z-index: 5;
   display: flex;
@@ -111,4 +125,56 @@ const Profile_card = styled.div`
   font-size: 25px;
 `;
 
-export { SpinnerContainer, Container, Wrapper, RegForm, HeaderContainer,Profile_card };
+const Favourite_container = styled.div`
+  display: flex;
+  white-space: normal;
+  height: 100%;
+  color: black;
+  padding: 20px 0;
+`;
+
+const Favourite_left = styled.div`
+  width: 50%;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: space-between;
+`;
+const Favourite_right = styled.div`
+  width: 50%;
+`;
+const Film_item = styled(Favourite_left)`
+text-align: center;
+  width: 300px;
+  height: 350px;
+  display: block;
+  img {
+    height: 150px;
+    width: auto;
+    object-fit: cover;
+  }
+  a{
+    text-decoration: none;
+    color: red;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+  }
+`;
+
+export {
+  Favourite_container,
+  Favourite_right,
+  Favourite_left,
+  SpinnerContainer,
+  Container,
+  Wrapper,
+  RegForm,
+  HeaderContainer,
+  Profile_card,
+  Page404Form,
+  Film_item,
+};

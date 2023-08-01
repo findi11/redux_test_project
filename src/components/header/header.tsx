@@ -5,6 +5,7 @@ import { selectMeData } from "../../store/modules/me/selector";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLogout } from "../../store/modules/logout/selectors";
 import { actions as logoutActions } from '../../store/modules/logout/slice';
+import { showConfirmSwal } from "../popup/confirm_popup";
 
 
 function Header() {
@@ -19,8 +20,10 @@ function Header() {
   }, []);
 
   function logoutMe(){
+    showConfirmSwal();
     dispatch(
       logoutActions.fetchTrigger()
+    
     );
   }
 

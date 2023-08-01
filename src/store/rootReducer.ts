@@ -10,7 +10,7 @@ import {reducer as changePass} from './modules/change_password/slice'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {
+export default  {
   baconipsum,
   evel,
   jsonPlaceholder,
