@@ -31,7 +31,7 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 
 const configureAppStore = () => {
   const store = createStore(
-    reducers,
+    persistedReducer,
     {},
     //@ts-ignore
     compose(

@@ -37,6 +37,7 @@ function Header() {
             <>
             <button onClick={logoutMe}>LOGOUT</button>
             <Link  to="/profile">PROFILE</Link>
+            <Link  to="/favourite">FAVOURITE</Link>
             </>
           ): (
             <Link to="/login">LOGIN</Link>

@@ -135,16 +135,21 @@ const Favourite_container = styled.div`
 
 const Favourite_left = styled.div`
   width: 50%;
- display: flex;
- flex-direction: row;
- flex-wrap: wrap;
- justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 const Favourite_right = styled.div`
   width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-left: 1px solid black;
 `;
 const Film_item = styled(Favourite_left)`
-text-align: center;
+  text-align: center;
   width: 300px;
   height: 350px;
   display: block;
@@ -153,14 +158,15 @@ text-align: center;
     width: auto;
     object-fit: cover;
   }
-  a{
+  button {
     text-decoration: none;
     color: red;
     padding: 10px;
     border: 1px solid black;
     border-radius: 20px;
     font-size: 15px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     text-transform: uppercase;
   }
 `;

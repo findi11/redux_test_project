@@ -3,7 +3,8 @@ import * as ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
-import store from "./store";
+import store, { persistor } from "./store";
+import { PersistGate } from "redux-persist/lib/integration/react";
 
 
 // import { $apiClient } from 'utils/';
@@ -13,16 +14,10 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  // <BrowserRouter>
-
     <Provider store={store}>
-       
-        <App/>
-      {/* <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/reg" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
-      </Routes> */}
+      <PersistGate persistor={persistor} loading={null}>
+      <App/>
+      </PersistGate>
     </Provider>
   // </BrowserRouter>
 );

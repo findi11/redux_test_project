@@ -1,4 +1,5 @@
-import {persistor} from '../../store/index';
+import { persistor } from "../../store/index";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   Favourite_left,
@@ -8,6 +9,14 @@ import {
 } from "../../utils/style";
 
 function Favourite() {
+  interface Ivideos {
+    id: number;
+    title: string;
+    description: string;
+    img: any;
+  }
+  const [videos1, setVideos] = useState<Ivideos[]>([]);
+  const [videosF, setVideosF] = useState<Ivideos[]>([]);
   const videos = [
     {
       id: 1,
@@ -31,18 +40,34 @@ function Favourite() {
       // link: "/films/terminator",
     },
   ];
-  // function setFavourite(id: number) {
-  //   const videoToAdd = videos.find((video) => video.id === id);
-  //   if (videoToAdd) {
-  //     // Отримали обраний відео, тепер додаємо його до персист сторіджу
-  //     persistor.updateState((state) => {
-  //       return {
-  //         ...state,
-  //         favouriteVideos: [...state.favouriteVideos, videoToAdd],
-  //       };
-  //     });
-  //   }
-  // }
+  useEffect(() => {
+    const storedVideos = localStorage.getItem("My favourite videos");
+    const parsedVideos = storedVideos ? JSON.parse(storedVideos) : [];
+    setVideosF(parsedVideos);
+  }, []);
+  function setFavourite(id: number) {
+    const videoToAdd = videos.find((video) => video.id === id);
+    if (videoToAdd) {
+      if (!videos1.some((video) => video.id === id)) {
+        const newVideos1 = [...videos1, videoToAdd];
+        const newVideosF = [...videosF, videoToAdd];
+        localStorage.setItem("My favourite videos", JSON.stringify(newVideosF));
+        setVideos(newVideos1);
+        setVideosF(newVideosF);
+      } else {
+        console.log("Video with this ID is already in favorites.");
+      }
+    }
+  }
+
+  function deleteFavourite(id: number) {
+    const newVideos1 = videos1.filter((video) => video.id !== id);
+    const newVideosF = videosF.filter((video) => video.id !== id);
+    localStorage.setItem("My favourite videos", JSON.stringify(newVideosF));
+    setVideos(newVideos1);
+    setVideosF(newVideosF);
+  }
+
   return (
     <>
       <Container>
@@ -53,11 +78,22 @@ function Favourite() {
                 <img src={video.img} alt={video.title} />
                 <h2>{video.title}</h2>
                 <p>{video.description}</p>
-                {/* <button onClick={() => setFavourite(video.id)}></button> */}
+                <button onClick={() => setFavourite(video.id)}>Додати</button>
               </Film_item>
             ))}
           </Favourite_left>
-          <Favourite_right>asasa</Favourite_right>
+          <Favourite_right>
+            {videosF.map((video) => (
+              <Film_item key={video.id}>
+                <img src={video.img} alt={video.title} />
+                <h2>{video.title}</h2>
+                <p>{video.description}</p>
+                <button onClick={() => deleteFavourite(video.id)}>
+                  Вилучити {video.id}
+                </button>
+              </Film_item>
+            ))}
+          </Favourite_right>
         </Favourite_container>
       </Container>
     </>
